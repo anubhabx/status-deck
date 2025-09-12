@@ -2,13 +2,16 @@
   "name": "starter-template",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.js",
+  "main": "src/index.ts",
   "type": "module",
   "scripts": {
     "format": "prettier --write ."
   },
   "dependencies": {
-    "node-appwrite": "^14.1.0"
+    "@prisma/client": "^6.16.1",
+    "cron-parser": "^5.3.1",
+    "node-fetch": "^3.3.2",
+    "prisma": "^6.16.1"
   },
   "devDependencies": {
     "prettier": "^3.2.5"
