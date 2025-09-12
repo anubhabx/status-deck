@@ -19,8 +19,6 @@ const app = express();
 app.use(helmet.hidePoweredBy());
 app.use(
   cors({
-    origin: (env.CLIENT_ENDPOINT as string).split(","),
-    credentials: true,
     allowedHeaders: ["Content-Type", "Authorization", "cache-control"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
   })
@@ -28,7 +26,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(clerkMiddleware());
-app.use(morgan("dev"));
+app.use(morgan("combined"));
 
 // Health check endpoint
 app.get("/health", (req, res) => {
