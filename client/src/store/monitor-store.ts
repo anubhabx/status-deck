@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { IMonitor, IChecks, IMonitorFormData } from "@/types";
+import { IMonitor, IMonitorFormData } from "@/types";
 import api from "@/lib/axios";
 import { toast } from "sonner";
 
@@ -43,7 +43,7 @@ export const useMonitorStore = create<MonitorState>((set, get) => ({
     }
   },
   setMonitors: (monitors) => set({ monitors }),
-  addMonitor: async (monitor, token) => {
+  addMonitor: async (monitor) => {
     try {
       const response = await api.post("/monitors", monitor);
 
