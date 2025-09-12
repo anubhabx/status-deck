@@ -19,7 +19,7 @@ const app = express();
 app.use(helmet.hidePoweredBy());
 app.use(
   cors({
-    origin: [env.CLIENT_ENDPOINT],
+    origin: (env.CLIENT_ENDPOINT as string).split(","),
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization", "cache-control"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
